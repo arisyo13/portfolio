@@ -9,6 +9,7 @@ export default function NavBar() {
                 <nav className="flex">
                     <MyLink name="Home" path="/" exact={false}></MyLink>
                     <MyLink name="Projects" path="/projects" exact={false}></MyLink>
+                    <MyLink name="Posts" path="/post" exact={false}></MyLink>
                 </nav>
                 <div className="inline-flex mr-3 items-center">
                     <SocialIcon 
