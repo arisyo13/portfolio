@@ -12,5 +12,4 @@ export default function MyLink(props) {
             {props.name}
         </NavLink>
     )
-
 }
