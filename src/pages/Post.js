@@ -1,45 +1,52 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import sanityClient from "../client.js";
+import sanityClient from "../client";
+import imageUrlBuilder from "@sanity/image-url";
 
-export default function Post() {
-  const [postData, setPost] = useState(null);
+const builder = imageUrlBuilder(sanityClient);
+const urlFor = (source) => {
+  return builder.image(source);
+}
+
+const Post = () => {
+  const [postData, setPost] = useState(undefined);
 
   useEffect(() => {
     sanityClient
       .fetch(
         `*[_type == "post"]{
-        title,
-        slug,
-        mainImage{
-          asset->{
-            _id,
-            url
+          title,
+          slug,
+          mainImage{
+            asset->{
+              _id,
+              url
+            },
+            alt
           },
-          alt
-        }
-      }`
+          "name": author -> name,
+          "authorImage": author -> image,
+          publishedAt
+        }`
       )
-      .then((data) => setPost(data))
+      .then((data) => setPost(data ))
       .catch(console.error);
   }, []);
 
+  if (!postData) return <p>Loadding..</p>
+
   return (
-    <main className="bg-gray-100 min-h-screen p-12">
-      <section className="container mx-auto self-center">
-        <h1 className="text-5xl flex justify-center">
-          My Blog Posts Page!
+    <main className="bg-gray-100 flex min-h-screen px-8 md:px-0 mt-16">
+      <section className="container mx-auto py-8">
+        <h1 className="text-5xl text-center mb-6 flex justify-center">
+          My Blogs
         </h1>
-        <h2 className="text-lg text-gray-600 flex justify-center mb-12">
-          Welcome to my page of blog posts
-        </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3">
-          {postData &&
-            postData.map((post, index) => (
-              <article>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          { postData && postData.map((post, index) => (
+              <article className="">
                 <Link to={"/post/" + post.slug.current} key={post.slug.current}>
                   <span
-                    className="block h-64 relative rounded-lg shadow leading-snug bg-white"
+                    className="block h-64 relative rounded-lg shadow bg-white"
                     key={index}
                   >
                     <img
@@ -47,13 +54,17 @@ export default function Post() {
                       alt={post.mainImage.alt}
                       className="w-full h-full rounded-lg object-cover absolute"
                     />
-                    <span className=" relative h-full flex justify-end items-end pr-4 pb-4">
-                      <h3 className="text-lg  px-3 py-4 bg-red-700 text-red-100 bg-opacity-75 rounded">
+                    <span className="relative h-full flex justify-end items-end pr-4 pb-4">
+                      <h3 className="text-lg px-3 py-4 bg-red-700 text-red-100 bg-opacity-75 rounded">
                         {post.title}
                       </h3>
                     </span>
                   </span>
                 </Link>
+                <span className="flex items-center">
+                  <img className="rounded-full mt-2 w-11 h-11" src={urlFor(post.authorImage).url()} alt={post.name}/>
+                  <p className="pl-1">Posted by {post.name}</p>
+                </span>
               </article>
             ))}
         </div>
@@ -61,3 +72,5 @@ export default function Post() {
     </main>
   );
 }
+
+export default Post
