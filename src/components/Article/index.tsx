@@ -7,7 +7,7 @@ const urlFor = (source: string): any => {
   return builder.image(source);
 }
 
-interface Props {
+type Props = {
     title: string,
     index: number,
     slug: string,

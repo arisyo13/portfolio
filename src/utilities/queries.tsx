@@ -1,4 +1,4 @@
-const queryArticle = `*[_type == "post"]{
+export const queryArticle = `*[_type == "post"]{
     title,
     slug,
     mainImage{
@@ -13,4 +13,12 @@ const queryArticle = `*[_type == "post"]{
     publishedAt
   }`
 
-  export default queryArticle
+  
+
+  export const queryProjects = `*[_type == "project"]{
+    title,
+    date,
+    place,
+    description,
+    link
+  }`

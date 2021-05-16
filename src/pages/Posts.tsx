@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client";
 import Article from '../components/Article';
-import queryArticle from '../utilities/queries'
+import { queryArticle } from '../utilities/queries'
 
 const Posts = () => {
-  const [postData, setPost] = useState(undefined);
+  const [postData, setPost] = useState<any[]>([])
 
   useEffect(() => {
     sanityClient
       .fetch(queryArticle)
-      .then((data) => setPost(data ))
+      .then((data) => setPost(data))
       .catch(console.error);
   }, []);
 
@@ -26,7 +26,7 @@ const Posts = () => {
               title={post.title} 
               index={index} 
               slug={post.slug.current} 
-              slugIndex={post.slug.current.index} 
+              slugIndex={index} 
               mainImage={post.mainImage.asset.url} 
               imageAlt={post.mainImage.alt}
               authorImage={post.authorImage}
