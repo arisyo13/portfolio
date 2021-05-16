@@ -1,19 +1,20 @@
 type Props = {
     onClick?: () => void;
+    clicked: boolean
 }
 
 const Burger = (props: Props) => {
+
     return (
         <div 
             onClick={props.onClick}
-            id="burger"
-            className="block md:hidden items-center cursor-pointer "
+            className="block md:hidden items-center cursor-pointer"
         >
-            <div id="line-1" className="w-6 h-0.5 mb-1 bg-white">
+            <div className={"w-6 h-0.5 mb-1 bg-white transition-all ease-linear duration-300 transform " + (props.clicked ? "" : "-rotate-45 translate-y-1")} >
             </div>
-            <div id="line-2" className="w-6 h-0.5 mb-1 bg-white">
+            <div className={"w-6 h-0.5 mb-1 bg-white transition-all ease-linear duration-300 transform " + (props.clicked ? "" : "opacity-0")}>
             </div>
-            <div id="line-3" className="w-6 h-0.5 bg-white">
+            <div className={"w-6 h-0.5 bg-white transition-all ease-linear duration-300 transform " + (props.clicked ? "" : "rotate-45 -translate-y-2")}>
             </div>
         </div>
     )

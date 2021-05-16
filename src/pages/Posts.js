@@ -33,20 +33,21 @@ const Post = () => {
       .catch(console.error);
   }, []);
 
-  if (!postData) return <p>Loadding..</p>
+  
 
   return (
-    <main className="bg-gray-100 flex min-h-screen px-8 md:px-0 mt-16">
-      <section className="container mx-auto py-8">
-        <h1 className="text-5xl text-center mb-6 flex justify-center">
+    <main className="flex min-h-screen bg-gray-900 px-8 md:px-0">
+      <section className="container py-8 mx-auto">
+        <h1 className="text-5xl text-center text-white mb-6 flex justify-center">
           My Blogs
         </h1>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
           { postData && postData.map((post, index) => (
               <article className="">
                 <Link to={"/post/" + post.slug.current} key={post.slug.current}>
                   <span
-                    className="block h-64 relative rounded-lg shadow bg-white"
+                    className="block h-64 relative rounded-xl shadow bg-white"
                     key={index}
                   >
                     <img
@@ -61,9 +62,9 @@ const Post = () => {
                     </span>
                   </span>
                 </Link>
-                <span className="flex items-center">
-                  <img className="rounded-full mt-2 w-11 h-11" src={urlFor(post.authorImage).url()} alt={post.name}/>
-                  <p className="pl-1">Posted by {post.name}</p>
+                <span className="flex mt-2 items-center">
+                  <img className="rounded-full  w-8 h-8" src={urlFor(post.authorImage).url()} alt={post.name}/>
+                  <p className="pl-1 text-xs text-white">Posted by {post.name}</p>
                 </span>
               </article>
             ))}

@@ -1,9 +1,13 @@
 import React from 'react';
 import { SocialIcon } from "react-social-icons";
 
-const SocialIcons = () => {
+type Props = {
+    className?: string;
+}
+
+const SocialIcons = (props: Props) => {
     return (
-        <div className="md:inline-flex items-center max-h-6 w-1/5 justify-end hidden">
+        <div className={"flex items-center max-h-6 w-1/5 justify-end " + props.className}>
             <SocialIcon 
                 url="https://www.facebook.com/arisyo13"
                 bgColor="transparent"
@@ -20,7 +24,7 @@ const SocialIcons = () => {
                 url="https://github.com/arisyo13"
                 bgColor="transparent"
                 fgColor="#fff"
-                className="rounded-full "
+                className="rounded-full"
             />
         </div>
     )
