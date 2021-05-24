@@ -31,7 +31,7 @@ const Article = (props: Props) => {
                     className="w-full h-full rounded-lg object-cover absolute"
                   />
                   <span className="relative h-full flex justify-end items-end pr-4 pb-4">
-                    <h3 className="text-lg px-3 py-4 bg-red-700 text-red-100 bg-opacity-75 rounded">
+                    <h3 className="text-sm py-2 px-4 bg-red-700 text-red-100 bg-opacity-75 rounded-md">
                       {props.title}
                     </h3>
                   </span>

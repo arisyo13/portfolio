@@ -14,11 +14,8 @@ const Posts = () => {
   }, []);
 
   return (
-    <main className="flex min-h-screen bg-gray-800 px-8 md:px-0">
-      <section className="container pt-20 pb-8 mx-auto">
-        <h1 className="text-5xl text-center text-white mb-6 flex justify-center">
-          My Blogs
-        </h1>
+    <main className="flex min-h-screen py-20 bg-gray-400">
+      <section className="container px-4 md:px-0 mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           { postData && postData.map((post, index) => (
             <Article

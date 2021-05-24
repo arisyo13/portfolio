@@ -1,12 +1,10 @@
 import { NavLink } from "react-router-dom";
-import logo from "./assets/logo-full.png";
+import logo from "./assets/myLogo.svg";
 
 const Logo = () => {
     return (
-        <NavLink className="flex w-1/5 justify-start" to="/"exact >
-            <div>
-                <img src={logo} alt="page-logo" width={46} height={46} />
-            </div>
+        <NavLink className="flex w-1/5 justify-start z-50" to="/" exact >
+            <img src={logo} alt="page-logo" width={40} height={40} />
         </NavLink>
     )
 }
