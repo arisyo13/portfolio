@@ -1,4 +1,6 @@
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ReactGa from 'react-ga';
 import NavBar from "./components/Navbar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
@@ -6,6 +8,10 @@ import Posts from "./pages/Posts";
 import Footer from "./components/Footer";
 
 const App = () => {
+  useEffect(() =>{
+    ReactGa.initialize('G-SV4B0DMM5Y')
+    ReactGa.pageview(window.location.pathname + window.location.search)
+  }, [])
   return (
     <BrowserRouter>
     <NavBar />
