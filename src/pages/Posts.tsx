@@ -14,8 +14,8 @@ const Posts = () => {
   }, []);
 
   return (
-    <main className="flex min-h-screen bg-gray-900 px-8 md:px-0">
-      <section className="container pt-20 mx-auto">
+    <main className="flex min-h-screen bg-gray-800 px-8 md:px-0">
+      <section className="container pt-20 pb-8 mx-auto">
         <h1 className="text-5xl text-center text-white mb-6 flex justify-center">
           My Blogs
         </h1>

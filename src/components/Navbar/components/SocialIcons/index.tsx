@@ -7,7 +7,7 @@ type Props = {
 
 const SocialIcons = (props: Props) => {
     return (
-        <div className={"items-center justify-end " + props.className}>
+        <div className={"items-center justify-end mt-16 md:mt-0 " + props.className}>
             <SocialIcon 
                 url="https://www.facebook.com/arisyo13"
                 bgColor="transparent"

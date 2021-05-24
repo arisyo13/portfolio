@@ -12,7 +12,7 @@ const Projects =() => {
         .catch(console.error);
     }, []);
     return (
-        <main className="flex min-h-screen pt-20 bg-gray-100">
+        <main className="flex min-h-screen pt-20">
             { projectData && projectData.map((project, index) => (
                 <div key={index}>
                     <h1>{project.title}</h1>
@@ -21,8 +21,7 @@ const Projects =() => {
                     <h1>{project.description}</h1>
                     <h1>{project.link}</h1>
                 </div>
-            
-          ))}
+            ))}
         </main>
     )
 }
