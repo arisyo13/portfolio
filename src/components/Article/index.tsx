@@ -1,11 +1,5 @@
 import { Link } from "react-router-dom";
-import sanityClient from "../../client";
-import imageUrlBuilder from "@sanity/image-url";
-
-const builder = imageUrlBuilder(sanityClient);
-const urlFor = (source: string): any => {
-  return builder.image(source);
-}
+import { urlFor } from "../imageToUrl";
 
 type Props = {
     title: string,
@@ -21,7 +15,7 @@ type Props = {
 const Article = (props: Props) => {
     return (
         <article key={props.index}>
-            <Link to={"/posts/" + props.slug} key={props.slugIndex}>
+            <Link to={"/post/" + props.slug} key={props.slugIndex}>
                 <span
                   className="block h-48 relative rounded-xl shadow bg-white"
                 >

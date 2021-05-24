@@ -4,7 +4,7 @@ import Article from '../components/Article';
 import { queryArticle } from '../utilities/queries'
 
 const Posts = () => {
-  const [postData, setPost] = useState<any[]>([])
+  const [postData, setPost] = useState<any[]>([]);
 
   useEffect(() => {
     sanityClient
