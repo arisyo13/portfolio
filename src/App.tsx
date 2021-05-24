@@ -9,7 +9,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
   useEffect(() =>{
-    ReactGa.initialize('G-GBDE3H8Z32')
+    ReactGa.initialize('UA-197778161-1')
     ReactGa.pageview(window.location.pathname + window.location.search)
   }, [])
   return (
