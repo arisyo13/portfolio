@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 import SanityClient from '../client';
-import { queryAuthor } from '../utilities/queries';
-
-interface SimpleAuthor {
-    name: string
-}
+import { SimpleAuthor } from "../models/SimpleAuthor";
+import { queryAuthor } from '../utils/queries';
 
 const About = () => {
-    const [authorData, setAuthor] = useState<SimpleAuthor>({name: ""});
+    const [authorData, setAuthor] = useState<SimpleAuthor>({name: ''});
 
     useEffect(() => {
         SanityClient
@@ -17,9 +14,9 @@ const About = () => {
     }, []);
 
     return (
-        <main className="min-h-screen py-20 bg-white">
+        <main className="min-h-screen py-20 bg-blue-700">
             <div className="container mx-auto px-4 md:px-0">
-                { !authorData ? <h1>Loading...</h1> : <h1>{authorData.name}</h1> }
+                { authorData.name === '' ? <h1>Loading...</h1> : <h1>{authorData.name}</h1> }
             </div>
         </main>
     )

@@ -1,31 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import sanityClient from '../client';
-import { querySinglePost } from '../utilities/queries';
+import { SimpleArticle } from '../models/SimplePost';
+import { querySinglePost } from '../utils/queries';
 
 interface params {
     slug: string
 }
 
-interface mImage {
-    asset: {
-        _id: number,
-        url: string
-    }
-}
-
-interface SimplePost {
-    title: string,
-    _id: number,
-    slug: string,
-    mainImage: mImage,
-    body: any,
-    name: string,
-    authorImage: string
-}
-
 const Post = () => {
-    const [post, setPost] = useState<SimplePost[]>([]);
+    const [post, setPost] = useState<SimpleArticle[]>([]);
     const { slug } = useParams<params>();
     useEffect(() => {
         sanityClient
@@ -35,10 +19,12 @@ const Post = () => {
     }, [slug]);
     
     return (
-        <div className="flex min-h-screen py-20">
-            {post.map((post, index) => (
-                <h1 key={index}>{post.title}</h1>)
-            )}
+        <div className="min-h-screen py-20">
+            <div className="container mx-auto flex">
+                {post.map((post, index) => (
+                    <h1 key={index}>{post.title}</h1>)
+                )}
+            </div>
         </div>
     )
 }

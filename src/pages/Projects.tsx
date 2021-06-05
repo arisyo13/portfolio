@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client";
-import { queryProjects } from '../utilities/queries';
+import { SimpleProject } from "../models/SimpleProject";
+import { queryProjects } from '../utils/queries';
 
 const Projects =() => {
-    const [projectData, setProjects] = useState<any[]>([])
+    const [projectData, setProjects] = useState<SimpleProject[]>([])
 
     useEffect(() => {
         sanityClient
@@ -12,16 +13,19 @@ const Projects =() => {
         .catch(console.error);
     }, []);
     return (
-        <main className="flex min-h-screen pt-20">
-            { projectData && projectData.map((project, index) => (
-                <div key={index}>
-                    <h1>{project.title}</h1>
-                    <h1>{new Date(project.date).toLocaleDateString()}</h1>
-                    <h1>{project.place}</h1>
-                    <h1>{project.description}</h1>
-                    <h1>{project.link}</h1>
-                </div>
-            ))}
+        <main className="min-h-screen pt-20">
+            <div className="container mx-auto flex">
+                { projectData && projectData.map((project, index) => (
+                    <div key={index}>
+                        <h1>{project.title}</h1>
+                        <h1>{new Date(project.date).toLocaleDateString()}</h1>
+                        <h1>{project.place}</h1>
+                        <h1>{project.description}</h1>
+                        <h1>{project.link}</h1>
+                    </div>
+                ))}
+            </div>
+            
         </main>
     )
 }

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import sanityClient from "../client";
 import Article from '../components/Article';
-import { queryArticle } from '../utilities/queries'
+import { SimpleArticle } from "../models/SimplePost";
+import { queryArticle } from '../utils/queries'
 
 const Posts = () => {
-  const [postData, setPost] = useState<any[]>([]);
+  const [postData, setPost] = useState<SimpleArticle[]>([]);
 
   useEffect(() => {
     sanityClient
@@ -14,20 +15,14 @@ const Posts = () => {
   }, []);
 
   return (
-    <main className="flex min-h-screen py-20 bg-gray-400">
+    <main className="flex min-h-screen py-20 bg-gradient-to-bl from-red-200 to-blue-300">
       <section className="container px-4 md:px-0 mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           { postData && postData.map((post, index) => (
             <Article
               key={index}
-              title={post.title} 
-              index={index} 
-              slug={post.slug.current} 
-              slugIndex={index} 
-              mainImage={post.mainImage.asset.url} 
-              imageAlt={post.mainImage.alt}
-              authorImage={post.authorImage}
-              authorName={post.name}
+              index={index}
+              article={post}
             />
           ))}
         </div>

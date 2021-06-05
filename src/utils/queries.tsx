@@ -8,7 +8,7 @@ export const queryArticle = `*[_type == "post"]{
       },
       alt
     },
-    "name": author -> name,
+    "authorName": author -> name,
     "authorImage": author -> image,
     publishedAt
   }`;

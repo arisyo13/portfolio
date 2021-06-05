@@ -7,7 +7,7 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Posts from "./pages/Posts";
 import Post from "./pages/Post";
-import Footer from "./components/Footer";
+import Footer from "./panels/Footer";
 
 const App = () => {
   useEffect(() =>{
