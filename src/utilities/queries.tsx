@@ -11,9 +11,7 @@ export const queryArticle = `*[_type == "post"]{
     "name": author -> name,
     "authorImage": author -> image,
     publishedAt
-  }`
-
-  
+  }`;
 
   export const queryProjects = `*[_type == "project"]{
     title,
@@ -21,4 +19,23 @@ export const queryArticle = `*[_type == "post"]{
     place,
     description,
     link
-  }`
+  }`;
+
+  export const queryAuthor = `*[_type == "author"]{
+    name
+  }`;
+
+  export const querySinglePost = (slug: string) => `*[slug.current == "${slug}"]{
+    title,
+    _id,
+    slug,
+    mainImage{
+        asset->{
+            _id,
+            url
+        }
+    },
+    body,
+    "name": author->name,
+    "authorImage": author->image
+}`;

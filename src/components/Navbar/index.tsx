@@ -14,12 +14,14 @@ const NavBar = () => {
                     <Link path="/" name="Home" isExact/>
                     <Link path="/projects" name="Projects"/>
                     <Link path="/posts" name="Posts"/>
+                    <Link path="/about" name="About"/>
                 </div>
                 <div className={"fixed inset-0 transition-transform ease-in duration-400 md:hidden transform " + (slide ? "": "translate-x-full")}>
                     <div className="flex flex-col bg-black bg-opacity-95 items-center h-screen justify-evenly">
                         <Link path="/" name="Home" isExact />
                         <Link path="/projects" name="Projects" />
                         <Link path="/posts" name="Posts" />
+                        <Link path="/about" name="About"/>
                         <SocialIcons className="md:hidden" />
                     </div>
                 </div>

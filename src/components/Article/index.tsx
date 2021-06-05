@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
-import { urlFor } from "../imageToUrl";
+import { urlFor } from "../../utilities/imageToUrl";
 
 type Props = {
     title: string,
     index: number,
     slug: string,
-    slugIndex: any,
-    mainImage: any,
+    slugIndex: number,
+    mainImage: string,
     imageAlt: string,
     authorName: string,
-    authorImage: any
+    authorImage: string
 }
 
 const Article = (props: Props) => {
