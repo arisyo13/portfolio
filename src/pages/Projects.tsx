@@ -14,7 +14,7 @@ const Projects =() => {
     }, []);
     return (
         <main className="min-h-screen pt-20">
-            <div className="container mx-auto flex">
+            <div className="container mx-auto flex px-4 md:px-0">
                 { projectData && projectData.map((project, index) => (
                     <div key={index}>
                         <h1>{project.title}</h1>

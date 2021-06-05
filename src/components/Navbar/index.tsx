@@ -16,8 +16,8 @@ const NavBar = () => {
                     <Link path="/posts" name="Posts"/>
                     <Link path="/about" name="About"/>
                 </div>
-                <div className={"fixed inset-0 transition-transform ease-in duration-400 md:hidden transform " + (slide ? "": "translate-x-full")}>
-                    <div className="flex flex-col bg-black bg-opacity-95 items-center h-screen justify-evenly">
+                <div className={"fixed inset-0 bg-gradient-to-tl from-red-200 to-blue-400 transition-transform ease-in duration-400 md:hidden transform " + (slide ? "": "translate-x-full")}>
+                    <div className="flex flex-col items-center h-screen py-28 justify-evenly">
                         <Link path="/" name="Home" isExact />
                         <Link path="/projects" name="Projects" />
                         <Link path="/posts" name="Posts" />
