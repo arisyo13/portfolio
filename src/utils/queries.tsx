@@ -22,7 +22,14 @@ export const queryArticle = `*[_type == "post"]{
   }`;
 
   export const queryAuthor = `*[_type == "author"]{
-    name
+    name,
+    image{
+      asset->{
+        _id,
+        url
+      },
+      alt
+    },
   }`;
 
   export const querySinglePost = (slug: string) => `*[slug.current == "${slug}"]{

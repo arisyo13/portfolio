@@ -6,4 +6,5 @@
 body {
     font-family: 'Assistant', sans-serif;
     overflow-x: hidden;
+    @apply bg-gray-100;
 }

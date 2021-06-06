@@ -3,8 +3,9 @@ import SanityClient from '../client';
 import { SimpleAuthor } from "../models/SimpleAuthor";
 import { queryAuthor } from '../utils/queries';
 
+
 const About = () => {
-    const [authorData, setAuthor] = useState<SimpleAuthor>({name: ''});
+    const [authorData, setAuthor] = useState<SimpleAuthor>({name: '', image: {asset: {_id: 0, url: ''}, alt: ""}});
 
     useEffect(() => {
         SanityClient
@@ -14,9 +15,13 @@ const About = () => {
     }, []);
 
     return (
-        <main className="min-h-screen py-20 bg-blue-700">
+        <main className="min-h-screen py-20 bg-white    ">
             <div className="container mx-auto px-4 md:px-0">
-                { authorData.name === '' ? <h1>Loading...</h1> : <h1>{authorData.name}</h1> }
+                { authorData.name !== 'Aris' ? <h1>Loading...</h1> : 
+                <div className="flex flex-col md:flex-row gap-4 items-baseline">
+                    <img className="w-full md:w-80 shadow-xl rounded-md" src={authorData.image.asset.url} alt={authorData.name} />
+                    <h1>{authorData.name}</h1>
+                </div> }
             </div>
         </main>
     )
