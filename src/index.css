@@ -3,6 +3,10 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Assistant&display=swap');
 
+.test {
+    @apply bg-red-500;
+}
+
 body {
     font-family: 'Assistant', sans-serif;
     overflow-x: hidden;

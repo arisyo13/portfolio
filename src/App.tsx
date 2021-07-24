@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ReactGa from 'react-ga';
 import NavBar from "./components/Navbar";
 import Home from "./pages/Home";
+import Error from "./pages/Error";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Projects from "./pages/Projects";
@@ -19,12 +20,13 @@ const App = () => {
     <BrowserRouter>
       <NavBar />
         <Switch>
-          <Route component={Home} path='/' exact  key={0} ></Route>
+          <Route component={Home} path='/' exact key={0} ></Route>
           <Route component={Posts} path='/posts' key={1} ></Route>
           <Route component={Projects} path='/projects' key={2} ></Route>
           <Route component={About} path='/about' key={3} ></Route>
           <Route component={Contact} path='/contact' key={4} ></Route>
           <Route component={Post} path='/post/:slug' key={5} ></Route>
+          <Route component={Error} ></Route>
         </Switch>
       <Footer />
     </BrowserRouter>
