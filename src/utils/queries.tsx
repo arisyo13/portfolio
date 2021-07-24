@@ -1,4 +1,4 @@
-export const queryArticle = `*[_type == "post"]{
+export const queryPosts = `*[_type == "post"]{
     title,
     slug,
     mainImage{

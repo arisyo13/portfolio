@@ -11,7 +11,7 @@ const NavBar = () => {
             <nav className="container mx-auto py-2 md:py-1 px-4 md:px-0 flex items-center justify-between">
                 <Logo />
                 <div className="md:flex w-3/5 justify-center hidden ">
-                    <Link path="/" name="Home" isExact/>
+                    <Link path="/" name="Home"/>
                     <Link path="/projects" name="Projects"/>
                     <Link path="/posts" name="Posts"/>
                     <Link path="/about" name="About"/>
@@ -19,7 +19,7 @@ const NavBar = () => {
                 </div>
                 <div className={"fixed inset-0 bg-gradient-to-tl from-red-200 to-blue-400 transition-transform ease-in duration-400 md:hidden transform " + (slide ? "": "translate-x-full")}>
                     <div className="flex flex-col items-center h-screen py-28 justify-evenly">
-                        <Link path="/" name="Home" isExact />
+                        <Link path="/" name="Home" />
                         <Link path="/projects" name="Projects" />
                         <Link path="/posts" name="Posts" />
                         <Link path="/about" name="About"/>

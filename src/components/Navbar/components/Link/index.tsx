@@ -1,22 +1,16 @@
-import { NavLink } from "react-router-dom";
+import Link from "next/link";
 
 type Props = {
     path: string,
-    isExact?: boolean,
     name: string,
 }
 
-const Link = (props: Props) => {
+const NavLink = (props: Props) => {
     return (
-        <NavLink 
-            className=" text-white text-mine bg-mine py-1 px-4 text-2xl md:text-lg items-center"
-            to={props.path} 
-            exact={props.isExact}
-            activeClassName="font-bold"
-        >
-            {props.name}
-        </NavLink>
+        <Link href={props.path}>
+            <a className=" text-white text-mine bg-mine py-1 px-4 text-2xl md:text-lg items-center">{props.name}</a>
+        </Link>
     )
 }
 
-export default Link
+export default NavLink

@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@craco/craco": "^6.1.2",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^2.8.0",
     "@sanity/eventsource": "^2.2.6",
@@ -14,7 +13,8 @@
     "autoprefixer": "^9",
     "emailjs-com": "^2.6.4",
     "groq": "^2.2.6",
-    "postcss": "^7",
+    "next": "^11.0.1",
+    "postcss": "^8.3.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-ga": "^3.3.0",
@@ -23,14 +23,15 @@
     "react-social-icons": "^5.3.0",
     "social-media-icons-react": "^1.1.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "typescript": "^4.2.4",
+    "typescript": "^4.3.5",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "craco test",
-    "eject": "react-scripts eject"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export": "next build && next export"
   },
   "eslintConfig": {
     "extends": [

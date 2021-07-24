@@ -1,15 +1,17 @@
-export interface SimpleProject {
+export interface ISimpleImage {
+  asset: { 
+    _id: string, 
+    url: string
+  }, 
+  alt: string
+}
+
+export interface ISimpleProject {
     title: string,
     slug: { 
       current: string
     },
-    mainImage: {
-      asset: { 
-        _id: string, 
-        url: string
-      }, 
-      alt: string
-    },
+    mainImage: ISimpleImage,
     description: string,
     place: string,
     link: string,

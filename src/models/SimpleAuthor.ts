@@ -1,4 +1,6 @@
-export interface SimpleAuthor {
+import { ISimpleImage } from "./SimpleProject";
+
+export interface ISimpleAuthor {
     name: string,
-    image: {asset: {_id: number, url: string}, alt: string}
+    image: ISimpleImage
 }
