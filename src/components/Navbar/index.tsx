@@ -3,34 +3,39 @@ import Link from "./components/Link";
 import Logo from "./components/Logo";
 import SocialIcons from "./components/SocialIcons";
 import Burger from "./components/Burger";
+import { Container, NavHeader } from "../Styled";
 
 const NavBar = () => {
     const [slide, setSlide] = useState(false);
     return (
-        <header className="flex fixed bg-black top-0 inset-x-0 z-50">
-            <nav className="container mx-auto py-2 md:py-1 px-4 md:px-0 flex items-center justify-between">
-                <Logo />
-                <div className="md:flex w-3/5 justify-center hidden ">
-                    <Link path="/" name="Home"/>
-                    <Link path="/projects" name="Projects"/>
-                    <Link path="/posts" name="Posts"/>
-                    <Link path="/about" name="About"/>
-                    <Link path="/contact" name="Contact"/>
-                </div>
-                <div className={"fixed inset-0 bg-gradient-to-tl from-red-200 to-blue-400 transition-transform ease-in duration-400 md:hidden transform " + (slide ? "": "translate-x-full")}>
-                    <div className="flex flex-col items-center h-screen py-28 justify-evenly">
-                        <Link path="/" name="Home" />
-                        <Link path="/projects" name="Projects" />
-                        <Link path="/posts" name="Posts" />
+        <NavHeader>
+            <Container>
+                <nav className="h-11 flex items-center justify-between">
+                    <Logo />
+                    <div className="md:flex w-3/5 justify-center hidden ">
+                        <Link path="/" name="Home"/>
+                        <Link path="/projects" name="Projects"/>
+                        <Link path="#test" name="Posts"/>
                         <Link path="/about" name="About"/>
-                        <Link path="/contact" name="Contact"/>
-                        <SocialIcons className="md:hidden" />
+                        <Link path="#contact" name="Contact"/>
                     </div>
-                </div>
-                <SocialIcons className={"md:flex hidden"} />
-                <Burger clicked={slide} onClick={() => setSlide(!slide)} />
-            </nav>
-        </header>
+                    <SocialIcons className={"md:flex hidden"} />
+                    <Burger clicked={slide} onClick={() => setSlide(!slide)} />
+                    <div className={"fixed inset-0 transition-transform ease-in duration-400 md:hidden transform " + (slide ? "": "translate-x-full")}>
+                        <div className="flex flex-col items-center backdrop-filter backdrop-blur-sm bg-black bg-opacity-70 h-screen py-28 justify-evenly">
+                            <div className="flex flex-col gap-4 items-center">
+                            <Link path="/" name="Home" />
+                            <Link path="/projects" name="Projects" />
+                            <Link path="#test" name="Posts" />
+                            <Link path="/about" name="About"/>
+                            <Link path="#contact" name="Contact"/>
+                            </div>
+                            <SocialIcons className="md:hidden" />
+                        </div>
+                    </div>
+                </nav>
+            </Container>
+        </NavHeader>
     )
 }
 

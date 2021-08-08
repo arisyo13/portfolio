@@ -30,6 +30,7 @@ export const queryPosts = `*[_type == "post"]{
       },
       alt
     },
+    bio
   }`;
 
   export const querySinglePost = (slug: string) => `*[slug.current == "${slug}"]{

@@ -2,12 +2,12 @@ import React from 'react';
 import { SocialIcon } from "react-social-icons";
 
 type Props = {
-    className?: string;
+    className?: string | "";
 }
 
 const SocialIcons = (props: Props) => {
     return (
-        <div className={" md:w-1/5 items-center justify-end " + props.className}>
+        <div className={"md:w-1/5 items-center justify-end " + props.className}>
             <div className="w-32 justify-end flex gap-3 ">
                 <SocialIcon
                     url="https://www.facebook.com/arisyo13"

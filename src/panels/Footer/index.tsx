@@ -1,11 +1,12 @@
 import React from 'react';
+import { Footer } from "../../components/Styled";
 
-const Footer = () => {
+const FooterPanel = () => {
     return (
-        <footer className="flex justify-center bg-gray-100 items-center py-20">
-            <h1 className="text-4xl">Texts</h1>
-        </footer>
+        <Footer id={"footer"}>
+            <h1 className="text-lg">Aris-Arsen Kashari Copyright 2021</h1>
+        </Footer>
     )
 }
 
-export default Footer
+export default FooterPanel

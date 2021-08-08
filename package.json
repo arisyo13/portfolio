@@ -3,28 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@sanity/block-content-to-react": "^2.0.7",
-    "@sanity/client": "^2.8.0",
-    "@sanity/eventsource": "^2.2.6",
+    "@sanity/block-content-to-react": "^3.0.0",
+    "@sanity/client": "^2.13.0",
+    "@sanity/eventsource": "^2.13.0",
     "@sanity/image-url": "^0.140.22",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "autoprefixer": "^9",
-    "emailjs-com": "^2.6.4",
-    "groq": "^2.2.6",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@testing-library/user-event": "^13.2.0",
+    "emailjs-com": "^3.2.0",
+    "groq": "^2.13.0",
     "next": "^11.0.1",
     "postcss": "^8.3.6",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-ga": "^3.3.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "react-social-icons": "^5.3.0",
+    "react-social-icons": "^5.5.1",
     "social-media-icons-react": "^1.1.2",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "^4.3.5",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^2.1.0"
   },
   "scripts": {
     "dev": "next dev",
@@ -33,27 +29,10 @@
     "lint": "next lint",
     "export": "next build && next export"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
-    "@types/react-dom": "^17.0.5",
-    "@types/react-router-dom": "^5.1.7",
-    "eslint-import-resolver-typescript": "2.3.0"
+    "@types/react-dom": "^17.0.9",
+    "eslint-import-resolver-typescript": "2.4.0",
+    "autoprefixer": "^9",
+    "tailwindcss": "2.2.7"
   }
 }

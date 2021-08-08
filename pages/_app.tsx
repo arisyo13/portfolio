@@ -11,11 +11,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     ReactGa.pageview(window.location.pathname + window.location.search)
   }, [])
   return ( 
-    <div>
-      <NavBar />
-      <Component {...pageProps} />
-      <Footer />
-    </div>)
+      <React.Fragment>
+        <NavBar />
+        <Component {...pageProps} />
+        <Footer />
+      </React.Fragment>
+    )
 }
 
 export default MyApp;

@@ -1,6 +1,7 @@
 import React from "react";
-import { ISimpleAuthor } from "../../models/SimpleAuthor";
-import { ISimpleProject } from "../../models/SimpleProject";
+import BlockContent from "@sanity/block-content-to-react";
+import { ISimpleAuthor, ISimpleProject } from "../../models";
+import { Main, Container } from "../../components/Styled";
 
 type Props = {
     projects: ISimpleProject[];
@@ -9,13 +10,16 @@ type Props = {
 
 const Hero = ({ projects, author }: Props) => {
     return (
-        <main className="min-h-screen py-20">
-            <div className="container mx-auto px-4 md:px-0">
-                <img src={author.image.asset.url} alt={author.image.alt} />
+        <Main>
+            <Container>
+                <img src={author.image.asset.url} className="w-72 h-auto" alt={author.image.alt} />
                 <h1 className="text-4xl text-primary">{author.name}</h1>
-                { projects && projects.map((v, index) => <p key={index}>{v.date}</p>) }
-            </div>
-        </main>
+                <BlockContent blocks={author.bio} projectId="peqa4imu" dataset="production" />
+                { projects && projects.map((v, index) => (
+                    <p key={index}>{v.date}</p>
+                ))}
+            </Container>
+        </Main>
     )
 }
 
