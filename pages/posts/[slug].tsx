@@ -22,9 +22,9 @@ const SinglePost = ({ post }: Props) => {
 
 export const getStaticPaths = async () => {
     const posts = await SanityClient.fetch(queryPosts).catch(error => console.error(error));
-    const paths = posts.map((v: ISimpleArticle) => {
+    const paths = posts.map((post: ISimpleArticle) => {
         return {
-            params: { slug: v.slug.current.toString() }
+            params: { slug: post.slug.current.toString() }
         }
     });
 

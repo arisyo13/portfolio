@@ -10,7 +10,9 @@ type Props = {
 const Posts = ({ Posts }: Props) => {
     return (
         <div className="container mx-auto py-40">
-            {Posts && Posts.map((post, index) => <h1 key={index}>{post.title}</h1>)}
+            {Posts && Posts.map((post, index) => (
+                <h1 key={index}>{post.title}</h1>
+            ))}
         </div>
     )
 }

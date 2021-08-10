@@ -12,7 +12,7 @@ const Projects = ({projects}: Props) => {
         <main className="min-h-screen pt-20">
             <div className="container mx-auto flex px-4 md:px-0">
                 { projects && projects.map((project, index) => (
-                    <Project index={index} project={project} />
+                    <h1 key={index}>{project.title}</h1>
                 ))}
             </div>
         </main>
