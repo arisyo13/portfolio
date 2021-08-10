@@ -7,6 +7,7 @@ type Props = {
 }
 
 const Posts = ({ posts }:Props) => {
+    console.log(posts);
 
   return (
     <main className="flex min-h-screen py-20 bg-gradient-to-b from-purple-200 to-blue-200">
