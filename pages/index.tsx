@@ -26,7 +26,7 @@ const Home = ({ Projects, Posts, Author }: Props) => {
 
 export default Home;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   
   const Projects = await SanityClient.fetch(queryProjects).catch(error => console.error(error));
   const Posts = await SanityClient.fetch(queryPosts).catch(error => console.error(error));
