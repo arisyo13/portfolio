@@ -35,15 +35,15 @@ export const queryPosts = `*[_type == "post"]{
 
   export const querySinglePost = (slug: string) => `*[slug.current == "${slug}"]{
     title,
-    _id,
     slug,
     mainImage{
-        asset->{
-            _id,
-            url
-        }
+      asset->{
+        _id,
+        url
+      },
+      alt
     },
-    body,
-    "name": author->name,
-    "authorImage": author->image
+    "authorName": author -> name,
+    "authorImage": author -> image,
+    publishedAt
 }`;

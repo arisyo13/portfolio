@@ -1,20 +1,20 @@
-import { Link } from "react-router-dom";
-import { SimpleArticle } from "../../models/SimplePost";
+import Link from "next/link";
+import { ISimpleArticle } from "../../models";
 import { urlFor } from "../../utils/imageToUrl";
 
 
 interface Props {
-  article: SimpleArticle,
+  article: ISimpleArticle,
   index: number
 }
 
 const Article = ({ article, index }: Props) => {
   return (
-    <article  key={index}>
+    <article key={index}>
       <div>
-        <Link to={"/post/" + article.slug.current} key={index}>
+        <Link href={"posts/" + article.slug.current} key={index}>
           <span
-            className="block h-48 relative rounded-xl shadow-2xl bg-white"
+            className="block h-48 cursor-pointer relative rounded-xl shadow-2xl bg-white"
           >
             <img
               src={article.mainImage.asset.url}

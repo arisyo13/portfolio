@@ -26,7 +26,7 @@ export interface ISimpleImage {
 export interface ISimpleProject {
     title: string,
     slug: { 
-    current: string
+        current: string
     },
     mainImage: ISimpleImage,
     description: string,

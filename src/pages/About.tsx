@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import SanityClient from '../client';
-import { SimpleAuthor } from "../models/SimpleAuthor";
+import SanityClient from '../../client';
+import { ISimpleAuthor } from "../models";
 import { queryAuthor } from '../utils/queries';
 
 
 const About = () => {
-    const [authorData, setAuthor] = useState<SimpleAuthor>({name: '', image: {asset: {_id: 0, url: ''}, alt: ""}});
+    /* const [authorData, setAuthor] = useState<ISimpleAuthor>({ name: '', image: { asset: { _id: '0', url: '' }, alt: ''}});
 
     useEffect(() => {
         SanityClient
@@ -24,7 +24,7 @@ const About = () => {
                 </div> }
             </div>
         </main>
-    )
+    ) */
 }
 
 export default About

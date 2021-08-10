@@ -1,6 +1,8 @@
 import React from 'react';
 import SanityClient from '../client';
 import Hero from '../src/panels/Hero';
+import Project from '../src/panels/Projects';
+import Post from '../src/panels/Posts';
 import Contact from '../src/panels/Contact';
 import { queryProjects, queryPosts, queryAuthor } from '../src/utils/queries';
 import { ISimpleProject, ISimpleArticle, ISimpleAuthor } from '../src/models';
@@ -15,6 +17,8 @@ const Home = ({ Projects, Posts, Author }: Props) => {
   return (
     <React.Fragment>
       <Hero projects={Projects} author={Author[0]} />
+      <Project projects={Projects} />
+      <Post posts={Posts} />
       <Contact />
     </React.Fragment>
   )
