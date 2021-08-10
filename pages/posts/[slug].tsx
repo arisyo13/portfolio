@@ -20,7 +20,7 @@ const SinglePost = ({ post }: Props) => {
     )
 }
 
-export const getStaticPaths = async () => {
+/* export const getStaticPaths = async () => {
     const posts = await SanityClient.fetch(queryPosts).catch(error => console.error(error));
     const paths = posts.map((post: ISimpleArticle) => {
         return {
@@ -32,9 +32,9 @@ export const getStaticPaths = async () => {
         paths,
         fallback: false
     }
-}
+} */
 
-export async function getStaticProps(context: any) {
+export async function getServerSideProps(context: any) {
     const post = await SanityClient.fetch(querySinglePost(context.params.slug)).catch(error => console.error(error));
 
     return { props: { post }}
