@@ -14,9 +14,9 @@ const NavBar = () => {
                     <Logo />
                     <div className="md:flex w-3/5 justify-center hidden ">
                         <Link path="/" name="Home"/>
-                        <Link path="/projects" name="Projects"/>
-                        <Link path="#test" name="Posts"/>
-                        <Link path="/about" name="About"/>
+                        <Link path="#projects" name="Projects"/>
+                        <Link path="#posts" name="Posts"/>
+                        <Link path="#about" name="About"/>
                         <Link path="#contact" name="Contact"/>
                     </div>
                     <SocialIcons className={"md:flex hidden"} />
@@ -24,11 +24,11 @@ const NavBar = () => {
                     <div className={"fixed inset-0 transition-transform ease-in duration-400 md:hidden transform " + (slide ? "": "translate-x-full")}>
                         <div className="flex flex-col items-center backdrop-filter backdrop-blur-sm bg-black bg-opacity-70 h-screen py-28 justify-evenly">
                             <div className="flex flex-col gap-4 items-center">
-                            <Link path="/" name="Home" />
-                            <Link path="/projects" name="Projects" />
-                            <Link path="#test" name="Posts" />
-                            <Link path="/about" name="About"/>
-                            <Link path="#contact" name="Contact"/>
+                                <Link path="/" name="Home" />
+                                <Link path="#projects" name="Projects" />
+                                <Link path="#test" name="Posts" />
+                                <Link path="#about" name="About"/>
+                                <Link path="#contact" name="Contact"/>
                             </div>
                             <SocialIcons className="md:hidden" />
                         </div>

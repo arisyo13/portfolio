@@ -2,6 +2,7 @@ import React, { PropsWithChildren } from "react";
 
 type Props =  PropsWithChildren<{
     id?: string;
+    style?: 'dark' | 'light';
 }>;
 
 export const Container = ({ children = null }: Props) => {
@@ -12,9 +13,10 @@ export const Container = ({ children = null }: Props) => {
     )
 };
 
-export const Main = ({ id, children = null }: Props) => {
+export const Main = ({ id, children = null, style }: Props) => {
+    const st = style === 'dark' ? 'bg-gray-300' : ''
     return (
-        <div id={id} className="min-h-screen py-20">
+        <div id={id} className={"min-h-screen py-20 " + st}>
             {children}
         </div>
     )
@@ -30,7 +32,7 @@ export const Footer = ({ id, children = null }: Props) => {
 
 export const NavHeader = ({ children = null }: Props) => {
     return (
-        <header className="flex fixed backdrop-filter backdrop-blur-sm bg-black bg-opacity-50 top-0 inset-x-0 z-50">
+        <header className="flex fixed backdrop-filter backdrop-blur-sm bg-black bg-opacity-30 shadow top-0 inset-x-0 z-50">
             {children}
         </header>
     )

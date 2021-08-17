@@ -16,7 +16,7 @@ type Props = {
 const Home = ({ Projects, Posts, Author }: Props) => {
   return (
     <React.Fragment>
-      <Hero projects={Projects} author={Author[0]} />
+      <Hero author={Author[0]} />
       <Project projects={Projects} />
       <Post posts={Posts} />
       <Contact />
