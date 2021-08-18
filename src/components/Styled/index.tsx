@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, useRef } from "react";
 
 type Props =  PropsWithChildren<{
     id?: string;
@@ -32,7 +32,7 @@ export const Footer = ({ id, children = null }: Props) => {
 
 export const NavHeader = ({ children = null }: Props) => {
     return (
-        <header className="flex fixed backdrop-filter backdrop-blur-sm bg-black bg-opacity-30 shadow top-0 inset-x-0 z-50">
+        <header className="flex flex-col fixed backdrop-filter backdrop-blur-sm bg-black bg-opacity-30 shadow top-0 inset-x-0 z-50">
             {children}
         </header>
     )

@@ -9,9 +9,9 @@ type Props = {
 const Hero = ({ author }: Props) => {
     const texts = ['software developer', 'designer', 'test'];
     return (
-        <Main>
+        <div className='min-h-screen'>
             <video
-                className="relative transform -translate-y-20 w-full object-cover h-screen"
+                className="relative w-full object-cover h-screen"
                 autoPlay
                 muted
                 preload="auto"
@@ -34,7 +34,7 @@ const Hero = ({ author }: Props) => {
                     </span>
                 </Container>
             </div>
-        </Main>
+        </div>
     )
 }
 
