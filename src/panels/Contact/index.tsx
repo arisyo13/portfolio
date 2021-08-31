@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import Input from '../../components/Input';
-import { Container, Main } from '../../components/Styled';
+import { Container, Panel } from '../../components/Styled';
 
 const Contact = () => {
     const [text, setText] = useState("");
@@ -19,9 +19,11 @@ const Contact = () => {
     }
     
     return (
-        <Main id="contact">
-            <p className="hidden" >{text}</p>
+        <Panel id="contact">
+            <p className="hidden">{text}</p>
             <Container>
+                <h1>Contact me</h1>
+                <br></br>
                 <form onSubmit={sendEmail}>
                 <input type="hidden" name="contact_number" />
                     <Input name={"from_name"} placeholder={"Name"} textUpdate={setText} />
@@ -32,7 +34,7 @@ const Contact = () => {
                     <h1>{t}</h1>
                 </form>
             </Container>
-        </Main>
+        </Panel>
     )
 }
 

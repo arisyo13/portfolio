@@ -24,6 +24,15 @@ export default {
       to: {type: 'author'},
     },
     {
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [{type: 'image', options: {hotspot: true}}],
+      options: {
+        hotspot: true,
+      },
+    },
+    {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',

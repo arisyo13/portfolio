@@ -6,6 +6,7 @@ export interface ISimpleAuthor {
 
 export interface ISimpleArticle {
     title: string,
+    images: any,
     slug: { 
         current: string
     },

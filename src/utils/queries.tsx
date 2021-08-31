@@ -1,6 +1,7 @@
 export const queryPosts = `*[_type == "post"]{
     title,
     slug,
+    images,
     mainImage{
       asset->{
         _id,
