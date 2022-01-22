@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
-import { Container, Panel } from "../../components/Styled";
-import { ISimpleProject } from "../../models/index";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { Container, Panel } from "../../components/Styled";
+import { ISimpleProject } from "../../models/index";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,7 +22,7 @@ const Projects = ({ projects }: Props) => {
             start: 'top top',
             end: `${projects.length}00% top`,
             toggleActions: 'play none reverse pause',
-            scrub: .5,
+            scrub: .3,
             pin: true,
         });
 
@@ -37,8 +37,7 @@ const Projects = ({ projects }: Props) => {
                 ease: 'ease-in',
                 duration: 6,
                 translateY: 60,
-                rotateZ: '45deg'
-            }, i*10)
+            }, i*10+2)
             .to(`#text${i}`, {
                 opacity: 0,
                 ease: 'ease-out',

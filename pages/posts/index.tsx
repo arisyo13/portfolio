@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { FC } from 'react';
 import SanityClient from '../../client';
 import { queryPosts } from '../../src/utils/queries';
 import { ISimpleArticle } from '../../src/models';
 
 type Props = {
-    Posts: ISimpleArticle[]
+    posts: ISimpleArticle[]
 }
 
-const Posts = ({ Posts }: Props) => {
+const Posts: FC<Props> = ({ posts }): JSX.Element => {
     return (
         <div className="container mx-auto py-40">
-            {Posts && Posts.map((post, index) => (
+            {posts && posts.map((post, index) => (
                 <h1 key={index}>{post.title}</h1>
             ))}
         </div>
@@ -18,9 +18,9 @@ const Posts = ({ Posts }: Props) => {
 }
 
 export const getStaticProps = async () => {
-    const Posts = await SanityClient.fetch(queryPosts).catch(error => console.error(error));
+    const allPosts = await SanityClient.fetch(queryPosts).catch(error => console.error(error));
 
-    return { props: { Posts }}
+    return { props: { allPosts }}
 }
 
 export default Posts
